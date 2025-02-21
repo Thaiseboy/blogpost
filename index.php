@@ -1,5 +1,12 @@
+<?php
+require_once "config.php";
+
+$stmt = $pdo->query("SELECT * FROM posts ORDER BY created_at DESC");
+$posts = $stmt->fetchAll();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
