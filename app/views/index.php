@@ -11,21 +11,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Mijn Blog</a>
-    </nav>
     <div class="container mt-4">
-        <h1 class="text-center">Welkom op mijn Blog!</h1>
+        <h1 class="text-center"><?= $texts['title']; ?></h1>
+        <p class="text-center"><?= $text['description']; ?></p>
+    </div>
 
-        <?php foreach ($posts as $post): ?>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title"><?= htmlspecialchars($post['title']) ?></h5>
-                    <p class="card-text"><?= nl2br(htmlspecialchars($post['content'])) ?></p>
-                    <p class="text-muted">Geplaatst op: <?= $post['created_at'] ?></p>
-                </div>
-            </div>
-        <?php endforeach; ?>
+    <div class="text-center mt-4">
+        <button class="btn btn-primary">
+            <?= $texts['button_read_more']; ?>
+        </button>
     </div>
 </body>
 </html>
